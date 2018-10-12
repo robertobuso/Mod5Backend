@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  inventory: false
+  in_vase: false
+  experience: one
+
+two:
+  type: 
+  inventory: false
+  in_vase: false
+  experience: two
