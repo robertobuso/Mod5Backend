@@ -2,6 +2,7 @@ class Api::V1::ExperiencesController < ApplicationController
   before_action :find_experience, only: [:update]
 
   def index
+    byebug
     @experiences = Experience.all
     render json: @experiences
   end
