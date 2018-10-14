@@ -7,8 +7,7 @@ class Api::V1::ExperiencesController < ApplicationController
   end
 
   def update
-    @experience.update(experience_params)
-    if @experience.save
+    if @experience.update(experience_params)
       render json: @experience, status: :accepted
     else
       render json: { errors: @experience.errors.full_messages }, status: :unprocessable_entity
