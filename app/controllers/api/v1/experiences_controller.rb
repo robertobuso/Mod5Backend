@@ -1,5 +1,5 @@
 class Api::V1::ExperiencesController < ApplicationController
-  before_action :find_experience, only: [:update]
+  before_action :find_experience, only: [:update, :delete]
 
   def index
     @experiences = Experience.all
@@ -8,6 +8,19 @@ class Api::V1::ExperiencesController < ApplicationController
 
   def update
     @experience.update(experience_params)
+    if @experience.save
+      render json: @experience, status: :accepted
+    else
+      render json: { errors: @experience.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def delete
+    @experience.destroy
+  end
+
+  def create
+    @experience.new(experience_params)
     if @experience.save
       render json: @experience, status: :accepted
     else
