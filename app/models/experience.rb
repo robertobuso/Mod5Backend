@@ -1,4 +1,4 @@
 class Experience < ApplicationRecord
-  has_many :tasks
-  has_many :items
+  has_many :tasks, dependent: :destroy
+  has_many :items, dependent: :destroy
 end
