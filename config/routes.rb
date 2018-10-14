@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
    namespace :v1 do
-       root 'welcome#index'
-     resources :experiences
-     resources :tasks
-     resources :items
+     resources :experiences, only: [:index, :update]
+     resources :items, only: [:index, :update]
+     resources :tasks, only: [:index, :update]
    end
  end
 end

@@ -25,6 +25,15 @@ class Api::V1::ExperiencesController < ApplicationController
     end
   end
 
+  def create
+    @experience = Experience.new(experience_params)
+    if @experience.save
+      render json: @experience, status: :accepted
+    else
+      render json: { errors: @experience.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def experience_params
