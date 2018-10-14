@@ -6,5 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Experience.create(current:true, audio:"both")
-Experience.create(current:false, audio:"titles")
+Experience.create(status:'new', audio:'')
