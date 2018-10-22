@@ -30,7 +30,7 @@ class Api::V1::ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.permit(:status, :audio, :flower_one, :flower_two, :flower_three, :drag_book, :take_flower_one)
+    params.permit(:status, :audio, :flower_one, :flower_two, :flower_three, :drag_book, :take_flower_one, :click_chest, :click_church)
   end
 
   def find_experience
